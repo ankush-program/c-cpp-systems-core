@@ -15,7 +15,7 @@ int main(){
     printf("\n\nEnter size of an int array(in bytes) you want: ");
     int num;
     scanf("%d", &num);
-    // int arr[num];        // The size of the array should be known at compile-time
+    // int arr[num];        // Dynamic memory allocation(it maynot work on some compilers)
 
 
     // Printing the address of Array
@@ -37,9 +37,23 @@ int main(){
     std::cout << p << ' '<< (p+1) << '\n';
 
     // Similar in dereferencing
-    std::cout << *p << ' '<< *(p+1) << ' '<< *(p+2) << ' '<< *(p+3) << ' '<< *(p+4);
+    std::cout << *p << ' '<< *(p+1) << ' '<< *(p+2) << ' '<< *(p+3) << ' '<< *(p+4)<< '\n';
     // (p+4) --> not in the array arr, simply looks at the address and prints whatever garbage value here
     // Here, (p+3) is also not in the array because of the incrementing in the address in p
     
+
+    // ------------------------2D ARRAY---------------------------
+    int arr2[2][4];
+    for(int i = 0; i < 2; i++){
+        for(int j = 0; j < 4; j++){
+            printf("Enter input for arr2[%d][%d]: ",i,j);
+            std::cin>> arr2[i][j];
+        }
+    }
+    for(int i = 0; i < 2; i++){
+        for(int j = 0; j < 4; j++){
+            std::cout<< arr2[i][j]<<' ';
+        }
+    }
     return 0;
 }
