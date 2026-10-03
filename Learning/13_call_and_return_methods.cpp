@@ -22,6 +22,11 @@ int sum(int a, int b){
     return a + b;
 }
 
+int *sumPtr(int *a, int* b){
+   *a = *a +*b;
+    return a;
+}
+
 int &sumRefVar(int&a, int &b){
     int &c = a;
     c = a+b;    // changing reference of c to a+b, this also changes a (initialization reference) to a+b
@@ -49,9 +54,13 @@ int main(){
     std::cout<< "sum of "<<a<<" + "<<b<<" = "<<sum(a,b)<<'\n';
     printf("value of a = %d, value of b = %d\n",a,b);
 
+    // Return by reference using pointers
+    int *e =&b;
+    std::cout<<*sumPtr(&a,e)<<'\n';
+
     // Return by reference using reference variable
     printf("%d\n",sumRefVar(c,d));
-    printf("value of a = %d, value of b = %d",a,b);
+    printf("value of a = %d, value of b = %d\n",a,b);
 
     sumRefVar(a,b) = 100;       // This assigns 100 to a
     printf("value of a = %d, value of b = %d",a,b);

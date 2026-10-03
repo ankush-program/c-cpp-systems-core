@@ -24,5 +24,10 @@ int main(){
     change(&a);
     std::cout<< a << '\n';
 
+    // Poiner to Pointer
+    int **po = &p;
+    std::cout << "po = "<<po << '\n'        //address of pointer p
+              <<"*po = "<<*po << '\n'       //address of a
+              <<"**po = "<<**po <<'\n';     //a  ,Double dereferencing
     return 0;
 }
