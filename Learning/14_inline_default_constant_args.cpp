@@ -8,9 +8,9 @@ inline int sum(int a, int b){
     // seperate clone of "counter". These Files will NOT share the same counter.
     // static variables made to share the same, but inline function abdons this.
 
-    // C++ forces all files to share the exact same static variable. But, it adds a
-    // hidden safety lock to this static variable to prevent crashes. This lock runs 
-    // every time, destroying the spped benefit of inline function
+    // In such case, C++ forces all files to share the exact same static variable.
+    // But, it adds a hidden safety lock to this static variable to prevent crashes.
+    // This lock runs every time, destroying the speed benefit of inline function
     return a + b;
 }
 
@@ -19,7 +19,7 @@ int loop(){
     
     // static variable only initializes once in the whole program during first function call
     // then in next function calls, this initialization disregarded.
-    // static exists even the function call ends
+    // static variable exists even the function call ends
 
     a++;
     return a;
@@ -44,10 +44,9 @@ int main(){
     // inline function --> compiler replaces the function calls with the function body
     
     std::cout << sum(3,5) << '\n';
-    // this increases performance and reduces memory usage as no need to go 
-    // back and forth in functions
+    // this increases performance, reduces memory usage as no need to go back and forth in functions
     
-    // However, if inline keyword is used, then this is a compiler choice to 
+    // However, even if inline keyword is used, it is a compiler choice to 
     // make a function inline or not but if the inline function is complex,
     // or using loops, complex algorithms, switch, static variable. then, 
     // compiler may decide to not make a function inline even if using inline keyword
