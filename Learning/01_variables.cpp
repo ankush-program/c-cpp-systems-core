@@ -1,39 +1,21 @@
 #include <iostream>
 
-/* --- 2. GLOBAL VARIABLES --- */
-// Declared outside of any function. They can be accessed and modified 
-// by any function in this file. Global variables have Global scope
+// ----------------GLOBAL VARIABLES-----------------
+// Declared outside of any function, can be accessed and modified by any function.
+// Global variables have Global scope
 int var{11};
 
-//NOTE: global variable and local variable can have same name in a program.
-//but in such case, precedence will be given to local variable.
+//global and local variables can have same name in a program.but,then, precedence will be given to local variable.
 
 void func(){
-    // Outputting Global variable
-    std::cout << var << '\n';
+    std::cout << var << '\n';       // Outputting Global variable
+    var++;              // Modifying the global variable directly.
 
-    // Modifying the global variable directly. 
-    // This change will be visible to any other function that checks it.
-    var++;
-
-    // Local variable in func Function
-    int var{23};
-
-    //Local variable has more precedence than global variable
-    std::cout << var << '\n';
+    int var{23};        // Local variable in func Function
+    std::cout << var << '\n';       //Local variable has more precedence than global variable
 }
 
-/* --- 3. SCOPE --- */
-void demonstrate_local_variables(int a){
-    // Local variables have local scope
-    // Local variables only exist inside the function where they are declared.
-    a = 10;
-
-    std::cout << a << '\n';
-}
-
-
-/* --- 5. Extern Variable --- */
+// ----------------Extern Variable-----------------
 // It Tells the compiler this variable is defined in another file.
 // using it requires this variable to exist somewhere. 
 // Compiler will not allocate memory for it if it only declared here.
@@ -42,7 +24,7 @@ extern int externalVariable;
 
 
 int main(){
-    /* --- 1. DECLARATION AND DEFINITION --- */
+    // ----------------DECLARATION AND DEFINITION-----------------
         int a;              // Declaration: Declaring that a variable exists.
         a = 10;             // Initialization: Assigning a value for the first time.
         int b = 1;          // Declaration and Initialization together
@@ -50,8 +32,7 @@ int main(){
         int x = 5, y = 10, z;       // Multiple variables of the same type can be declared on one line
         z = x + y;
 
-    /* --- 2. GLOBAL VARIABLES --- */
-
+    // ----------------GLOBAL VARIABLES-----------------
         std::cout << var << '\n';
         func();
 
@@ -65,24 +46,13 @@ int main(){
         //To use global varaible even in the presence of local variable, use ::(scope resolution operator)
         std::cout << ::var;
 
-    /* --- 3. SCOPE --- */
-        // Calling external functions to show how variable "scope" works        
-        demonstrate_local_variables(a);
-        std::cout << a << '\n';
-
-    /* --- 4. BLOCK SCOPE --- */
-        int x = 10;
-
-        if (x == 10) {
-            // Variables declared inside a block { } only exist inside that block.
+    // ----------------BLOCK SCOPE-----------------
+        // Variables declared inside a block { } only exist inside that block.
+        {
             int y = 50;
-            printf("x = %d, y = %d\n", x, y);
+            printf("y = %d\n", y);
         } // 'y' is destroyed right here!
-
         // printf("%d", y); // ERROR: 'y' is undeclared here!
-
-    /* --- 5. Extern Variable --- */
-        // above
-        
+  
     return 0;
 }
