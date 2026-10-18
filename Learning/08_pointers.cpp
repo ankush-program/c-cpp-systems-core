@@ -24,6 +24,28 @@ int main(){
     change(&a);
     std::cout<< a << '\n';
 
+    int b = 8;
+
+    //---Pointer to const (Value cannot be changed, pointer can)
+    const int* ptr_to_const = &b; 
+    ptr_to_const = &a; // OK
+    // *ptr_to_const = 30; // ERROR: Read-only variable
+    
+    std::cout<< b << '\n';
+    std::cout<< a << '\n';
+
+    //---Const pointer (Pointer cannot be changed, value can)
+    int* const const_ptr = &b;
+    *const_ptr = 30;       // OK
+    // const_ptr = &a; // ERROR: Read-only pointer
+
+    std::cout<< b << '\n';
+
+    //---Const pointer to const (Neither can be changed)
+    const int* const fully_const = &b;
+
+    std::cout<< b << '\n';
+    
     // Poiner to Pointer
     int **po = &p;
     std::cout << "po = "<<po << '\n'        //address of pointer p
