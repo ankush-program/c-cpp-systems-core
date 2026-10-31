@@ -5,7 +5,7 @@ void foo(){
 }
 char goo();         // Function Declaration(or prototype)
 
-// Function Definition (Declaring along with defining its contents)
+// Function Definition or Funstion Signature (Declaring along with defining its contents)
 int sum(int a, int b){
     // Here a,b are called function parameters(or formal parameters)
     return a+b;
