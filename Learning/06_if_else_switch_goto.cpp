@@ -19,6 +19,9 @@ int main(){
     }
 
     // switch
+    // switch(expr1){ case a; cout<<"a";}   // expr1, a must be constantand either int or char only
+    // - switch just compare expressions
+
     switch (num1){
         case 1:
             std::cout << "num1 is one";
