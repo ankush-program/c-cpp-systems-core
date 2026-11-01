@@ -46,16 +46,16 @@ int main(){
     
 
     // ------------------------2D ARRAY---------------------------
-    int arr2[2][4];
+    int arr3[2][4];
     for(int i = 0; i < 2; i++){
         for(int j = 0; j < 4; j++){
             printf("Enter input for arr2[%d][%d]: ",i,j);
-            std::cin>> arr2[i][j];
+            std::cin>> arr3[i][j];
         }
     }
     for(int i = 0; i < 2; i++){
         for(int j = 0; j < 4; j++){
-            std::cout<< arr2[i][j]<<' ';
+            std::cout<< arr3[i][j]<<' ';
         }
         printf("\n");
     }
