@@ -4,7 +4,7 @@ int main(){
     printf("Enter no. of elements in array: ");
     scanf("%d",&n);
 
-    int arr[n];
+    int arr[30];
     printf("Enter elements of array: ");
     for(int i=0;i<n;i++){
         scanf("%d",&arr[i]);
@@ -14,9 +14,10 @@ int main(){
     }
     printf("\n");
 
-    int lar=0;
-    for(int i=1;i<n;i++){
-      if(lar>arr[i]) lar=arr[i];
+    int lar=INT_MIN;
+    for(int i=0;i<n;i++){
+      if(lar<arr[i]) lar=arr[i];
     }
-  return 0;
+	std::cout << lar;
+  	return 0;
 }

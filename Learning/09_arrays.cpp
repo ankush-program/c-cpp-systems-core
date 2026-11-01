@@ -3,6 +3,9 @@
 int main(){
     // Array is a collection of items of similar type stored in contiguous memory location.
     int arr[4] = {32,43,23,76};     // or int arr[] = {32,43,23,76}; --> as compiler knows the size by the no. of initialization values
+
+    int arr2[4] = {0};      // --> initialise all elements to 0
+    std::fill_n(arr2,4,1);      // --> set first 4 elements to 1
     
     // Assigning new value --> Syntax: arr[i] ,where i is the index of elements starting from 0 to (n-1), where n is array size
     arr[0] = 42;        // we can assign new value to elements of array
